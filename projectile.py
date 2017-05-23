@@ -9,7 +9,7 @@ def projectile_kernel(vartuple, t, g=1.0, gamma=0.0):
     return derivatives
 
 def find_landing_pos(sol, t):
-    x, vx, y, vy, z, vz = np.transpoe(sol)
+    x, vx, y, vy, z, vz = np.transpose(sol)
     tidx = len(filter(lambda h: h>0, z))
     landed_t = t[tidx] - z[tidx]*(t[tidx+1]-t[tidx])/(z[tidx+1]-z[tidx])
     landed_x = x[tidx] - z[tidx]*(x[tidx+1]-x[tidx])/(z[tidx+1]-z[tidx])
