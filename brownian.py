@@ -17,3 +17,7 @@ class BrownianMotioner:
         self.nbsteps += 1
 
         return self.x, self.y
+
+    def walk_for_nbsteps(self, nbsteps):
+        for _ in range(nbsteps):
+            yield self.next()
